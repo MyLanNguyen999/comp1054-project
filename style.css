@@ -19,14 +19,15 @@
   font-style: normal;
 }
 :root {
-  --color-primary: #3a00ff;
-  --color-primary-alt: #6f6ffd;
-  --color-secondary: #d42257;
-  --color-background: #d2fbf7;
-  --color-text: #412d86;
+  --color-primary: #721817;
+  --color-primary-alt: #0B6E4F;
+  --color-secondary: #2B4162;
+  --color-secondary-alt: #12966d;
+  --color-background: #E0E0E2;
+  --color-text: #2B4162;
   --color-light: #fff;
-  --color-anchor: #3a00ff;
-  --font-family: "Baloo 2", sans-serif;
+  --color-anchor: ##FA9F42;
+  /* --font-family: "Baloo 2", sans-serif; */
   --font-weight-strong: 500;
   --font-size-h1: 6rem;
   --font-size-h2: 3rem;
@@ -269,9 +270,10 @@ header {
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
-  background-position: 0 -38px, 17px -40px;
+  background-position: 0 -38px, 17px -40px; */
+  border: 5px dashed var(--color-primary-alt);
   color: var(--color-primary);
   text-align: center;
 }
@@ -307,7 +309,7 @@ nav ul a::before {
   height: 0.33em;
   background-color: var(--color-secondary);
   opacity: 0.15;
-  content: "";
+  /* content: ""; */
 }
 nav ul a:hover::before, nav ul a:focus::before {
   opacity: 1;
@@ -349,7 +351,8 @@ nav ul li {
   padding-bottom: 100%;
   transform: translate(-50%, -50%);
   transition: 300ms transform ease-in;
-  background-image: radial-gradient(rgba(255, 0, 0, 0) 20%, #b3f8f1 20%, #b3f8f1 25%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 30%, #b3f8f1 30%, #b3f8f1 40%, rgba(255, 0, 0, 0) 40%, rgba(255, 0, 0, 0) 45%, #b3f8f1 45%, #b3f8f1 50%, rgba(255, 0, 0, 0) 50%);
+  /* background-image: radial-gradient(rgba(255, 0, 0, 0) 20%, #b3f8f1 20%, #b3f8f1 25%, rgba(255, 0, 0, 0) 25%, rgba(255, 0, 0, 0) 30%, #b3f8f1 30%, #b3f8f1 40%, rgba(255, 0, 0, 0) 40%, rgba(255, 0, 0, 0) 45%, #b3f8f1 45%, #b3f8f1 50%, rgba(255, 0, 0, 0) 50%); */
+  background: repeating-linear-gradient(-45deg, transparent, transparent 10px, #fa9e4260 10px, #fa9e423e 18px);
   opacity: 0.8;
   content: "";
   z-index: -1;
@@ -400,7 +403,7 @@ nav ul li {
 }
 
 #contribute {
-  background: repeating-linear-gradient(-45deg, transparent, transparent 10px, #b3f8f1 10px, #b3f8f1 18px);
+  background: repeating-linear-gradient(-45deg, transparent, transparent 10px, #FA9F42 10px, #FA9F42 18px);
 }
 #contribute section {
   padding: 2rem;
@@ -658,7 +661,7 @@ nav ul li {
   min-height: 3em;
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: 0.18em 0.18em var(--color-secondary);
+  box-shadow: 0.18em 0.18em var(--color-secondary-alt);
 }
 
 [class^=link]:not(.link-codepen),
@@ -725,4 +728,43 @@ nav ul li {
   height: 1em;
   margin-right: 0.25em;
   fill: currentColor;
+}
+
+/* * add responsive desgin to nav bar */
+@media only screen and (width <= 500px) {
+  nav {
+    margin-top: 10px;
+    background-color: var(--color-primary);
+  }
+  nav ul li a {
+    color: var(--color-light);
+    font-size: 1.75rem;
+  }
+  
+}
+
+@media only screen and ( width > 500px) {
+  nav {
+      /* margin-top: 10px; */
+      /* background-color: var(--color-primary); */
+    }
+  
+    nav ul li a {
+      color: var(--color-primary-alt);
+      font-size: 1.75rem;
+    }
+}
+
+@media only screen and ((width >= 800px) and (orientation: landscape)) {
+  header {
+    border: 5px dotted var(--color-secondary);
+    
+  }
+  nav {
+    margin-top: 20px;
+    background-color: var(--color-secondary);
+ }
+ nav ul li a {
+  color: white;
+ }
 }
